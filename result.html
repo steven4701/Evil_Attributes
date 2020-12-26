@@ -67,11 +67,7 @@
             let locals = window.localStorage
             let str_results = []
             // 遍历(排除choosed)
-            for(let i = 0; i<localStorage.length; i++){
-                if (localStorage.key(i) !== 'choosed') {
-                    str_results.push(localStorage.getItem(localStorage.key(i)))
-                }
-            }
+
             // 分割每个string, 并将</br>换成空格
             let results = []
             for(let nameList of str_results) {
