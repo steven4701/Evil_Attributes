@@ -25,7 +25,7 @@
         .result span {
             display: inline-block;
             font-size: 25px;
-            width: 300px;
+            width: 150px;
             background: #fff;
             line-height: 30px;
             color: #000;
@@ -158,7 +158,7 @@
        @click="toggle"
        :class="{'button-secondary': !running,
                'button-success': running}">{{running?'停!':'开始'}}</button>
-        <button class="pure-button button-warning" @click="reset">重置</button>
+    <button class="pure-button button-warning" @click="reset">重置</button>
 </div>
 <script type="text/javascript" src="js/zepto.js"></script>
 <script type="text/javascript" src="js/vue.js"></script>
@@ -218,7 +218,7 @@
         new Vue({
             el: '#tools',
             data: {
-                selected: 3,
+                selected: 30,
                 running: false,
                 btns: [
                     3
