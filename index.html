@@ -199,8 +199,7 @@
                     }, m);
                 })
                   .sort(function(a, b){
-                    return a.score;
-                    
+                    return a.score - b.score;
                 })
                 .slice(0, count)
                 .map(function(m){
@@ -242,7 +241,7 @@
                     }
                 },
                 onClick: function(num){
-                    $('#result').css('display', 'none');
+                    $('#result').css('display', 'display');
                     $('#main').removeClass('mask');
                     this.selected = num;
                 },
