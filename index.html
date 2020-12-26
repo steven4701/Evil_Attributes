@@ -197,10 +197,10 @@
                     return Object.assign({
                       score: Math.random()
                     }, m);
-                })/*
+                })
                   .sort(function(a, b){
-                    return a.score - b.score;
-                    */
+                    return a.score;
+                    
                 })
                 .slice(0, count)
                 .map(function(m){
