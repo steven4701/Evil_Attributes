@@ -197,9 +197,10 @@
                     return Object.assign({
                       score: Math.random()
                     }, m);
-                })
-                .sort(function(a, b){
+                })/*
+                  .sort(function(a, b){
                     return a.score - b.score;
+                    */
                 })
                 .slice(0, count)
                 .map(function(m){
@@ -266,7 +267,7 @@
                         $('#main').removeClass('mask');
                         TagCanvas.SetSpeed('myCanvas', [5, 1]);
                     }
-                    /*this.running = !this.running;*/
+                    this.running = !this.running;//rot stop
                 }
             }
         });
