@@ -1949,7 +1949,6 @@ TCproto.TagToFront = function(tag, time, callback, active) {
   this.RotateTag(tag, 0, 0, time, callback, active);
 };
 TagCanvas.Start = function(id,l,o) {
-  TagCanvas.Delete(id);
   TagCanvas.tc[id] = new TagCanvas(id,l,o);
 };
 function tccall(f,id) {
