@@ -261,12 +261,12 @@
                             localStorage.setItem(new Date().toString(), JSON.stringify(ret));
                             $('#main').addClass('mask');
                         }, 300);
-                    } /*else {
+                    } else {//抽獎旋轉
                         $('#result').css('display', 'none');
                         $('#main').removeClass('mask');
                         TagCanvas.SetSpeed('myCanvas', [5, 1]);
-                    }*/
-                    this.running = !this.running;
+                    }
+                    /this.running = !this.running;*/
                 }
             }
         });
