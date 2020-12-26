@@ -241,7 +241,7 @@
                     }
                 },
                 onClick: function(num){
-                    $('#result').css('display', 'display');
+                    $('#result').css('display', 'block');
                     $('#main').removeClass('mask');
                     this.selected = num;
                 },
@@ -262,7 +262,7 @@
                             $('#main').addClass('mask');
                         }, 300);
                     } else {//抽獎旋轉
-                        $('#result').css('display', 'none');
+                        $('#result').css('display', 'block');
                         $('#main').removeClass('mask');
                         TagCanvas.SetSpeed('myCanvas', [5, 1]);
                     }
