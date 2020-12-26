@@ -1996,8 +1996,6 @@ TagCanvas.Delete = function(id) {
         RemoveHandler(handlers[id][i][0], handlers[id][i][1], c);
     }
   }
-  delete handlers[id];
-  delete TagCanvas.tc[id];
 };
 TagCanvas.NextFrameRAF = function() {
   requestAnimationFrame(DrawCanvasRAF);
