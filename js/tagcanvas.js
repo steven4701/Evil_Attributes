@@ -1948,7 +1948,10 @@ TCproto.RotateTag = function(tag, lt, lg, time, callback, active) {
 TCproto.TagToFront = function(tag, time, callback, active) {
   this.RotateTag(tag, 0, 0, time, callback, active);
 };
-
+TagCanvas.Start = function(id,l,o) {
+  TagCanvas.Delete(id);
+  TagCanvas.tc[id] = new TagCanvas(id,l,o);
+};
 function tccall(f,id) {
   TagCanvas.tc[id] && TagCanvas.tc[id][f]();
 }
@@ -1984,6 +1987,18 @@ TagCanvas.RotateTag = function(id, options) {
     }
   }
   return false;
+};
+TagCanvas.Delete = function(id) {
+  var i, c;
+  if(handlers[id]) {
+    c = doc.getElementById(id);
+    if(c) {
+      for(i = 0; i < handlers[id].length; ++i)
+        RemoveHandler(handlers[id][i][0], handlers[id][i][1], c);
+    }
+  }
+  delete handlers[id];
+  delete TagCanvas.tc[id];
 };
 TagCanvas.NextFrameRAF = function() {
   requestAnimationFrame(DrawCanvasRAF);
