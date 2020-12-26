@@ -241,8 +241,8 @@
                     }
                 },
                 onClick: function(num){
-                    $('#result').css('display', 'block');
-                    $('#main').removeClass('mask');
+                    $('#result').css('display', 'none');
+                    //$('#main').removeClass('mask');
                     this.selected = num;
                 },
                 
@@ -262,8 +262,8 @@
                             $('#main').addClass('mask');
                         }, 300);
                     } else {//抽獎旋轉
-                        $('#result').css('display', 'block');
-                        $('#main').removeClass('mask');
+                        $('#result').css('display', 'none');
+                        //$('#main').removeClass('mask');
                         TagCanvas.SetSpeed('myCanvas', [5, 1]);
                     }
                     this.running = !this.running;//rot stop
