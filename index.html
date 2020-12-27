@@ -244,6 +244,8 @@
                     $('#result').css('display', 'none');
                     $('#main').removeClass('mask');
                     this.selected = num;
+                    localStorage.clear();
+                        location.reload(true);
                 },
                 toggle: function(){
                     if(this.running){
