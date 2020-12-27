@@ -4,7 +4,7 @@
     <meta name="screen-orientation" content="portrait">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
-    <title>年会抽奖小程序</title>
+    <title>獵魔村物語-裝備屬性</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/wall.css">
     <style type="text/css">
@@ -141,7 +141,7 @@
 <body>
 <div id="main" class="wall">
     <div class="result-btn">
-       <a href="./result.html" target="_blank">获奖名单</a>
+       <a href="./result.html" target="_blank">裝備列表</a>
     </div>
 </div>
 <div id="result" class="result">
@@ -199,15 +199,15 @@
                     }, m);
                 })
                 .sort(function(a, b){
-                    /*return a.score - b.score;*/
+                    return a.score - b.score;
                 })
                 .slice(0, count)
                 .map(function(m){
-                  choosed[getKey(m)] = 1;
+                  choosed[getKey(m)] = 0;
                   list[m.index].style.color = color;
                   return m.name + '<br/>' + m.phone; 
                 });
-            /*localStorage.setItem('choosed', JSON.stringify(choosed));*/
+            localStorage.setItem('choosed', JSON.stringify(choosed));
             return ret;
         };
         var canvas = document.createElement('canvas');
@@ -235,7 +235,7 @@
             },
             methods: {
                 reset: function(){
-                    if(confirm('确定要重置么？所有之前的抽奖历史将被清除！')){
+                    if(confirm('重置紀錄')){
                         localStorage.clear();
                         location.reload(true);
                     }
@@ -256,7 +256,7 @@
                         $('#result').css('display', 'block').html('<span>' + ret.join('</span><span>') + '</span>');
                         TagCanvas.Reload('myCanvas');
                         setTimeout(function(){
-                            /*localStorage.setItem(new Date().toString(), JSON.stringify(ret));*/
+                            localStorage.setItem(new Date().toString(), JSON.stringify(ret));
                             $('#main').addClass('mask');
                         }, 300);
                     } else {
