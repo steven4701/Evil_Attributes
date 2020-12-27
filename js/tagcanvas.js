@@ -1623,12 +1623,12 @@ TCproto.Update = function() {
         j = added.shift();
         newlist[i] = this.CreateTag(tl[j]);
       }
-/*
+
       // remove any more (in reverse order)
       removed.sort(function(a,b) {return a-b});
       while(removed.length) {
         newlist.splice(removed.pop(), 1);
-      }*/
+      }
     }
 
     // add any extra tags
