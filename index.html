@@ -198,7 +198,7 @@
                       score: Math.random()
                     }, m);
                 })
-                  .sort(function(a, b){
+                .sort(function(a, b){
                     return a.score - b.score;
                 })
                 .slice(0, count)
@@ -243,11 +243,9 @@
                 onClick: function(num){
                     $('#result').css('display', 'none');
                     $('#main').removeClass('mask');
-                    //this.selected = num;
+                    this.selected = num;
                 },
-                
                 toggle: function(){
-                    
                     if(this.running){
                         TagCanvas.SetSpeed('myCanvas', speed());
                         var ret = lottery(this.selected);
@@ -258,15 +256,15 @@
                         $('#result').css('display', 'block').html('<span>' + ret.join('</span><span>') + '</span>');
                         TagCanvas.Reload('myCanvas');
                         setTimeout(function(){
-                            //localStorage.setItem(new Date().toString(), JSON.stringify(ret));
+                            localStorage.setItem(new Date().toString(), JSON.stringify(ret));
                             $('#main').addClass('mask');
                         }, 300);
-                    } else {//抽獎旋轉
+                    } else {
                         $('#result').css('display', 'none');
-                        //$('#main').removeClass('mask');
+                        $('#main').removeClass('mask');
                         TagCanvas.SetSpeed('myCanvas', [5, 1]);
                     }
-                    this.running = !this.running;//rot stop
+                    this.running = !this.running;
                 }
             }
         });
