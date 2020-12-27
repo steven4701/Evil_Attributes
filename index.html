@@ -207,7 +207,7 @@
                   list[m.index].style.color = color;
                   return m.name + '<br/>' + m.phone; 
                 });
-            localStorage.setItem('choosed', JSON.stringify(choosed));
+            /*localStorage.setItem('choosed', JSON.stringify(choosed));*/
             return ret;
         };
         var canvas = document.createElement('canvas');
@@ -256,7 +256,7 @@
                         $('#result').css('display', 'block').html('<span>' + ret.join('</span><span>') + '</span>');
                         TagCanvas.Reload('myCanvas');
                         setTimeout(function(){
-                            localStorage.setItem(new Date().toString(), JSON.stringify(ret));
+                            /*localStorage.setItem(new Date().toString(), JSON.stringify(ret));*/
                             $('#main').addClass('mask');
                         }, 300);
                     } else {
